@@ -1,13 +1,20 @@
 import axios from 'axios'
+import { response } from 'express'
 
 async function call(osama) {
-    let res = await axios.get('https://5e81-2001-b07-a9a-89a8-fc69-90ae-c7c4-8dbc.ngrok-free.app/digitazon/2023/02/group/1/students', {
+   try{ let res = await axios.get('https://7758-2001-b07-a9a-89a8-fc69-90ae-c7c4-8dbc.ngrok-free.app/digitazon/2023/02/group/1/students', {
         method: 'get',
         headers: {
           'key': osama,
         }
       })
-    return res.data
+      console.log(res.data);
+    return res.status
+  }
+    catch (error){
+      console.log(error.response.status, 'catch', osama);
+    return error.response.status
+    }
   }
   function nextKey(osama) {
     const x= 4 - (''+osama).length
@@ -18,6 +25,24 @@ async function call(osama) {
         }
     return key+=osama
   }
-  console.log(nextKey(100));
 
+call('0166')
 
+async function caller() {
+  let i=5550
+  while (i<10000) {
+    let response = await call(nextKey(i)) 
+    if (response>=400) {
+      i++
+    }
+    else if(response>=500||response==429) {
+      i--
+    }
+    else {
+      console.log(response);
+    break
+  }
+  }
+}
+
+caller()
