@@ -2,21 +2,21 @@
         {
             "name": "Matteo",
             "lastname": "Andreoni",
-            "secret": "Hello world"
+            "secret": "Hello world!"
         },
         {
             "name": "Osvaldo",
             "lastname": "Roscani",
-            "secret": "B modular"
+            "secret": "!B modular"
         },
         {
             "name": "Gianmarco",
             "lastname": "Vinzon",
-            "secret": "Darius"
+            "secret": "Dar!ius"
         },
         {
             "name": "Siegfred",
             "lastname": "Feranil",
-            "secret": "_1235è"
+            "secret": "_!1235è"
         }
     ]
