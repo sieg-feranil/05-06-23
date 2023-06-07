@@ -30,7 +30,7 @@ call('0166')
 
 async function caller() {
   let i=5550
-  while (i<10000) {
+  while (i<10000&&i>-1) {
     let response = await call(nextKey(i)) 
     if (response>=400) {
       i++
